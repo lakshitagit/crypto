@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const coinRoutes = require('./routes/coinRoutes');
-
+const path = require('path');
 dotenv.config();
 const app = express();
 
@@ -13,9 +13,16 @@ app.use(cors({
 }));
 app.use(express.json());
 
-
+ __dirname = path.resolve();
 
 app.use('/api', coinRoutes);
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname,"../client/dist")));
+    app.get("/*",(req,res)=>{
+        res.sendFile(path.join(__dirname,'../client/dist/index.html'));
+    })
+}
 
 mongoose.connect(process.env.MONGO_URL)
   .then(() => {
