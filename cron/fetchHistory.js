@@ -33,6 +33,8 @@ const fetchAndStoreHistory = async () => {
   }
 };
 
+
+
 //  For testing, run every minute:
 // cron.schedule('* * * * *', fetchAndStoreHistory);
 

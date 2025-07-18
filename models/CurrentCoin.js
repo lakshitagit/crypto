@@ -18,4 +18,6 @@ const CurrentCoinSchema = new mongoose.Schema({
   last_updated: Date,
 }, { timestamps: true });
 
+
+
 module.exports = mongoose.model('CurrentCoin', CurrentCoinSchema);

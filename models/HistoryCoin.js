@@ -5,4 +5,6 @@ const HistoryCoinSchema = new mongoose.Schema({
   coins: [Object],
 });
 
+
+
 module.exports = mongoose.model('HistoryCoin', HistoryCoinSchema);
