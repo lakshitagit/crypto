@@ -8,3 +8,4 @@ const HistoryCoinSchema = new mongoose.Schema({
 
 
 module.exports = mongoose.model('HistoryCoin', HistoryCoinSchema);
+

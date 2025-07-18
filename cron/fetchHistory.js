@@ -19,6 +19,7 @@ const fetchAndStoreHistory = async () => {
         },
       }
     );
+    
 
 
     await CurrentCoin.deleteMany({});
